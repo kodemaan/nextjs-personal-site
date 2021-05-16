@@ -12,7 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "next": "^9.2.2",
+    "@chakra-ui/react": "^1.6.1",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "framer-motion": "^4.1.16",
+    "next": "^9.5.5",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   }

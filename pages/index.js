@@ -1,5 +1,6 @@
+import { App } from '../components/App'
 function HomePage() {
-  return <div>Welcome to Next.js!</div>
+  return <App />
 }
 
 export default HomePage
