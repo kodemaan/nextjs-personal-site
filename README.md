@@ -13,7 +13,7 @@ All scripts start with `npm run`
 * `build` - Compiles the project to run on prod and compresses code
 * `start` - Runs the production build of Next.js
 * `lint` - Runs eslint and displays any errors
-* `fit` - Runs eslint and fixes any auto fixable errors and displays an error for the rest
+* `fix` - Runs eslint and fixes any auto fixable errors and displays an error for the rest
 * `tsc` - Does typescript type checking, this is also done during the `build` step
 * `version` - checks the node version used, should be 14.x
 
