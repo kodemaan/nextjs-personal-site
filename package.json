@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint . --ext ts,tsx",
+    "dev": "next",
+    "export": "next export",
     "fix": "eslint . --ext ts,tsx --fix",
+    "lint": "eslint . --ext ts,tsx",
+    "start": "next start",
     "tsc": "tsc",
     "version": "node -v"
   },
