@@ -26,7 +26,18 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.16.1'
-      - name: Install Node Dependencies
+      - name: Cache Node.js modules
+        id: node_modules
+        uses: actions/cache@v2
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: '**/node_modules' 
+          key: ${{ runner.OS }}-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
+      - name: Install dependencies
+        if: steps.node_modules.outputs.cache-hit != 'true'
         run: npm ci
   build:
     needs: install
@@ -38,6 +49,16 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.16.1'
+      - name: Cache Node.js modules
+        id: node_modules
+        uses: actions/cache@v2
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: '**/node_modules' 
+          key: ${{ runner.OS }}-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
       - name: Build npm commands
         run: npm run build
       - name: Deploy
