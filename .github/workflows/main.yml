@@ -26,6 +26,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.16.1'
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/npm-shrinkwrap.json') }}
       - name: Install dependencies and build 
         env:
           CI: true 
