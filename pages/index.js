@@ -1,6 +1,8 @@
-import { App } from '../components/App'
+import { Box } from '@chakra-ui/react'
 function HomePage() {
-  return <App />
+  return <Box>This is test content for the homepage</Box>
 }
+
+HomePage.layout = 'default'
 
 export default HomePage
